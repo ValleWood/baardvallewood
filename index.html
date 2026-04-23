@@ -16,9 +16,7 @@
       --border: #e5e7eb;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -31,18 +29,34 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 48px 20px 96px;
+      padding: 40px 20px 100px;
+    }
+
+    /* HEADER / LOGO */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .header img {
+      height: 48px;
+    }
+
+    .header span {
+      font-size: 22px;
+      font-weight: 700;
     }
 
     /* HERO */
     .hero {
       max-width: 800px;
-      margin-bottom: 56px;
+      margin-bottom: 60px;
     }
 
     .hero h1 {
       font-size: 42px;
-      line-height: 1.2;
       margin-bottom: 16px;
     }
 
@@ -51,17 +65,16 @@
       color: var(--muted);
     }
 
-    /* GALLERI */
-    .gallery {
+    /* BILDEGRID */
+    .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      margin-bottom: 72px;
+      margin-bottom: 80px;
     }
 
-    .gallery img {
+    .image-grid img {
       width: 100%;
-      height: auto;
       border-radius: 14px;
       border: 1px solid var(--border);
       background: var(--white);
@@ -71,47 +84,50 @@
     .cta {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 40px;
+      border-radius: 22px;
+      padding: 48px;
       max-width: 720px;
+      margin: 0 auto 80px;
+      text-align: center;
     }
 
     .cta h2 {
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 12px;
     }
 
     .cta p {
       color: var(--muted);
-      margin-bottom: 28px;
       font-size: 17px;
+      margin-bottom: 32px;
     }
 
-    .cta a {
-      display: inline-block;
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
       padding: 18px 36px;
       background: var(--accent);
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      border-radius: 12px;
       font-size: 18px;
+      border-radius: 999px;
     }
 
-    .cta a:hover {
+    .cta-button img {
+      height: 28px;
+      width: auto;
+    }
+
+    .cta-button:hover {
       background: var(--accent-dark);
     }
 
-    .cta .note {
-      margin-top: 16px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
     footer {
-      margin-top: 96px;
-      font-size: 14px;
+      text-align: center;
       color: var(--muted);
+      font-size: 14px;
     }
 
     @media (max-width: 600px) {
@@ -120,7 +136,7 @@
       }
 
       .cta {
-        padding: 28px;
+        padding: 32px;
       }
     }
   </style>
@@ -128,49 +144,35 @@
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Digitale byggetegninger i tre</h1>
-      <p>
-        Gjennomarbeidede PDF‑tegninger laget for praktisk bygging.
-        Dette er tegninger du faktisk kan bruke i verkstedet – tydelige mål,
-        rene snitt og gjennomtenkte løsninger.
-      </p>
-    </section>
-
-    <!-- BILDER -->
-    <section class="gallery">
-      <img src="bilde1.jpg" alt="Treprosjekt – bilde 1">
-      <img src="bilde2.jpg" alt="Treprosjekt – bilde 2">
-      <img src="bilde3.jpg" alt="Treprosjekt – bilde 3">
-      <img src="bilde4.jpg" alt="Treprosjekt – bilde 4">
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <h2>Til nettbutikken</h2>
-
-      <p>
-        Trykker du her kommer du videre til min nettbutikk hos Payhip.
-        Der kan du gjennomføre betaling og laste ned filene umiddelbart etter kjøp.
-      </p>
-
-      <a href="https://payhip.com/vallewood" target="_blank" rel="noopener">
-        Til nettbutikk
-      </a>
-
-      <div class="note">
-        Digitale produkter – angrerett bortfaller etter påbegynt nedlasting.
-      </div>
-    </section>
-
-    <footer>
-      © ValleWood – digitale tegninger til treprosjekter
-    </footer>
-
+  <!-- HEADER -->
+  <div class="header">
+    <img src="image/logo.png" alt="ValleWood logo">
+    <span>ValleWood</span>
   </div>
 
-</body>
-</html>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Digitale byggetegninger i tre</h1>
+    <p>
+      Gjennomarbeidede PDF‑tegninger laget for praktisk bygging.
+      Tegninger du faktisk kan bruke i verkstedet – tydelige mål og rene løsninger.
+    </p>
+  </section>
+
+  <!-- BILDER 1 -->
+  <section class="image-grid">
+    <img src="image/bilde1.jpg" alt="Treprosjekt bilde 1">
+    <img src="image/bilde2.jpg" alt="Treprosjekt bilde 2">
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>ValleWood nettbutikk</h2>
+    <p>
+      Trykker du her kommer du videre til min nettbutikk hos Payhip.
+      Der kan du betale og laste ned filene umiddelbart etter kjøp.
+    </p>
+
+    <a class="cta-button" href="https://payhip.com/vallewood" target="_blank" rel="noopener">
