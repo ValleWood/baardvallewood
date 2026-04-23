@@ -3,66 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adirondack dekkstol - bygg din egen</title>
+  <title>ValleWood – Håndlagde møbler</title>
 
   <style>
+    :root {
+      --bg: #faf9f7;
+      --text: #1a1a1a;
+      --sub: #5a5a5a;
+      --accent: #3e2723;
+      --accent-light: #5d4037;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background: #f5f5f5;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
       text-align: center;
-      padding: 4rem 1rem 2rem;
-      background: linear-gradient(135deg, #d7ccc8, #efebe9);
+      padding: 3.5rem 1.2rem 2rem;
+      background: linear-gradient(135deg, #e8e3df, #f7f4f2);
+      border-bottom: 1px solid #ddd;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      margin-bottom: 0.4rem;
       letter-spacing: -1px;
+      font-weight: 700;
     }
 
     .sub {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: var(--sub);
+      margin-bottom: 1.8rem;
     }
 
     .cta {
       display: inline-block;
-      padding: 1rem 2rem;
-      background: #3e2723;
+      padding: 1rem 2.2rem;
+      background: var(--accent);
       color: #fff;
-      border-radius: 8px;
+      border-radius: var(--radius);
       text-decoration: none;
-      font-size: 1.1rem;
-      transition: 0.2s;
+      font-size: 1.15rem;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
     }
 
     .cta:hover {
-      background: #5d4037;
-      transform: translateY(-2px);
+      background: var(--accent-light);
+      transform: translateY(-3px);
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 3rem 1.5rem;
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      padding: 2.5rem 1.2rem 3rem;
+      max-width: 1100px;
       margin: auto;
     }
 
     .gallery img {
       width: 100%;
-      height: 320px;
+      height: 260px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      transition: 0.25s;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
     }
 
     .gallery img:hover {
@@ -71,9 +86,9 @@
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #666;
+      color: var(--sub);
     }
   </style>
 </head>
@@ -84,8 +99,9 @@
     <h1>ValleWood</h1>
     <p class="sub">Håndlagde møbler i tre – bygget for å vare</p>
 
-    <a class="cta" href="https://din-nettbutikk.no" target="_blank">
-      Besøk nettbutikken
+    <!-- OPPDATERT DIREKTELINK TIL PAYHIP -->
+    <a class="cta" href="https://payhip.com/ValleWood" target="_blank">
+      Gå til nettbutikken
     </a>
   </header>
 
