@@ -6,30 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    :root {
-      --bg: #f4f4f3;
-      --white: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #0f766e;
-      --accent-dark: #115e59;
-      --border: #e5e7eb;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f3;
+      color: #1f2937;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px 100px;
+      padding: 40px 20px 80px;
     }
 
     /* HEADER */
@@ -37,80 +24,153 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     .header img {
       height: 120px; /* STOR LOGO */
-      width: auto;
     }
 
-    .header span {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
+    .header h1 {
+      font-size: 32px;
+      margin: 0;
     }
 
     /* HERO */
     .hero {
-      max-width: 850px;
-      margin-bottom: 70px;
-    }
-
-    .hero h1 {
-      font-size: 44px;
-      margin-bottom: 18px;
+      max-width: 700px;
+      margin-bottom: 60px;
     }
 
     .hero p {
       font-size: 18px;
-      color: var(--muted);
+      color: #555;
     }
 
     /* BILDER */
-    .image-grid {
+    .images {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      margin-bottom: 80px;
+      gap: 20px;
+      margin-bottom: 60px;
     }
 
-    .image-grid img {
+    .images img {
       width: 100%;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid #ddd;
     }
 
     /* CTA */
     .cta {
-      background: var(--white);
-      border: 2px solid var(--border);
-      border-radius: 26px;
-      padding: 50px;
-      max-width: 760px;
-      margin: 0 auto 90px;
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 24px;
+      padding: 40px;
       text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 14px;
+      margin-bottom: 60px;
     }
 
     .cta p {
       font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 36px;
+      color: #555;
+      margin-bottom: 30px;
     }
 
-    /* RUND KNAPP MED LOGO */
     .cta-button {
       display: inline-flex;
       align-items: center;
-      gap: 18px;
-      padding: 22px 44px;
-      background: var(--accent);
-      color: #fff;
+      gap: 16px;
+      padding: 20px 40px;
+      background: #0f766e;
+      color: white;
       text-decoration: none;
-      font-weight: 800;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 999px;
+    }
+
+    .cta-button img {
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      padding: 6px;
+    }
+
+    .cta-button:hover {
+      background: #115e59;
+    }
+
+    /* FOOTER */
+    footer {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .header img {
+        height: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="image/woodlogo.png" alt="ValleWood logo">
+    <h1>ValleWood</h1>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p>
+      Digitale byggetegninger i tre – utviklet for praktisk bygging.
+      Tydelige mål, rene snitt og gjennomtenkte løsninger.
+    </p>
+  </div>
+
+  <!-- BILDER -->
+  <div class="images">
+    <img src="image/bilde1.jpg" alt="Treprosjekt 1">
+    <img src="image/bilde2.jpg" alt="Treprosjekt 2">
+    <img src="image/bilde3.jpg" alt="Treprosjekt 3">
+    <img src="image/bilde4.jpg" alt="Treprosjekt 4">
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p>
+      Klikk under for å gå til ValleWood nettbutikk hos Payhip.
+      Der kan du betale og laste ned filene umiddelbart.
+    </p>
+
+    <a class="cta-button" href="https://payhip.com/vallewood" target="_blank">
+      <img src="image/woodlogo.png" alt="">
+      Til ValleWood nettbutikk
+    </a>
+  </div>
+
+  <!-- JURIDISK -->
+  <footer>
+    <p>
+      Digitale produkter: Angreretten bortfaller når nedlastingen har startet.
+    </p>
+    <p>
+      Alle byggetegninger er åndsverk og eies av ValleWood.
+      Kjøpet gir enerett til privat bruk.
+      Videre distribusjon, kopiering eller kommersiell bruk er forbudt.
+    </p>
+    <p>
+      © ValleWood
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
