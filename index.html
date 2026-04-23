@@ -24,6 +24,11 @@
       margin-bottom: 40px;
     }
 
+    .header img {
+      height: 140px;
+      margin-bottom: 10px;
+    }
+
     .header h1 {
       font-size: 42px;
       margin: 0;
@@ -82,6 +87,32 @@
       text-align: center;
       margin-top: 60px;
     }
+
+    /* Sticky knapp */
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #0f766e;
+      color: white;
+      padding: 18px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 999;
+    }
+
+    .sticky-cta.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
   </style>
 </head>
 
@@ -90,6 +121,7 @@
 <div class="container">
 
   <div class="header">
+    <img src="image/woodlogo.png" alt="ValleWood logo">
     <h1>ValleWood</h1>
   </div>
 
@@ -119,6 +151,27 @@
   </footer>
 
 </div>
+
+<!-- Sticky knapp -->
+<a class="sticky-cta" href="https://payhip.com/ValleWood" target="_blank">
+  Gå til nettbutikken
+</a>
+
+<script>
+  const stickyBtn = document.querySelector('.sticky-cta');
+  const ctaSection = document.querySelector('.cta');
+
+  function checkPosition() {
+    const rect = ctaSection.getBoundingClientRect();
+    if (rect.bottom < 0) {
+      stickyBtn.classList.add('visible');
+    } else {
+      stickyBtn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', checkPosition);
+</script>
 
 </body>
 </html>
